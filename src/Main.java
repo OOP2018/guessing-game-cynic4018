@@ -10,7 +10,6 @@ public class Main {
 		NumberGame game = new GuessingGame(upperBound);
 		GameConsole ui = new GameConsole( );
 		int solution = ui.play( game );
-		//TODO display the answer returned by play
 		System.out.println("Secret number is "+solution);
 		//TODO display how many guesses the user made
 	}
