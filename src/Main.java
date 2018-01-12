@@ -11,6 +11,6 @@ public class Main {
 		GameConsole ui = new GameConsole( );
 		int solution = ui.play( game );
 		System.out.println("Secret number is "+solution);
-		//TODO display how many guesses the user made
+		System.out.println("Count: "+game.getCount());
 	}
 }

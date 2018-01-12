@@ -53,7 +53,14 @@ public class NumberGame {
 	public int getUpperBound() {
 		return Integer.MAX_VALUE;  // not very helpful :-)
 	}
-    
+	
+	/** 
+	 * Get counter in guessing game.
+	 * That use getCount method from GuessingGame class by Override.
+	 */
+	public int getCount(){
+		return Integer.MAX_VALUE;
+	}
     /**
      * toString describes the game or problem.
      * @return description of this game or the problem to be solved.

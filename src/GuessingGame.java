@@ -11,6 +11,8 @@ public class GuessingGame extends NumberGame{
 	private int upperBound;
 	 /** the solution to the game */
 	private int secret;
+	/** counter to count in guess method*/
+	private int counter = 0;
 	
 	public GuessingGame(){
 		this(100);
@@ -26,7 +28,7 @@ public class GuessingGame extends NumberGame{
 	}
 	
 	public boolean guess(int number){
-		
+		counter++;
 		if (number == secret) {
     		setMessage("Correct! The secret number is "+secret);
     		return true;
@@ -44,6 +46,11 @@ public class GuessingGame extends NumberGame{
     		setMessage("Your answer is too large.");
     	}
     	return false;
+	}
+	
+	@Override
+	public int getCount(){
+		return counter;
 	}
 	
 	public String toString(){
