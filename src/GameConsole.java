@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 /** 
  *  Play guessing game on the console.
+ *  @author Katapon Sinpunyawong
  */
 public class GameConsole {
 
@@ -14,22 +15,25 @@ public class GameConsole {
 	public int play(NumberGame game) {
 		Scanner console = new Scanner(System.in);
 		
-		// Guess a secret number game.
+		// Describe the game (How to play).
 		System.out.println( game.toString() );
-		
-		
-//		System.out.println( game.getMessage() );
 		int guess = 0;
+		
 		while(true)
 		{
-		// Tell you a secret number between 1-upperbound in the first time and tell you answer too small or large.
+		// Tell you hint in the first time and tell you answer too small or large(so close or not).
 		System.out.println( game.getMessage() );
 		System.out.print("Your answer? ");
 		guess = console.nextInt();
 		boolean correct = game.guess(guess);
-			if(correct == true){
+			
+			if(correct == true)
+			{
+				// For tell you correct.
+				System.out.println( game.getMessage() );
 				break;
 			}
+			
 		}
 		return guess;
 	}

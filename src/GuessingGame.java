@@ -27,23 +27,29 @@ public class GuessingGame extends NumberGame{
 		super.setMessage("Secret Number between 1-"+ upperbound + ".");
 	}
 	
+	/**
+	 * guess method that for check guess number that too large or too small.
+	 *@param Tell you that guess number is too large or too small. 
+	 *@return True if you guess number that correct. 
+	 *		  False if you guess number not correct(so close or not).
+	 */
 	public boolean guess(int number){
 		counter++;
 		if (number == secret) {
-    		setMessage("Correct! The secret number is "+secret);
+    		super.setMessage("Correct! The secret number is "+secret);
     		return true;
     	}
     	if (number < 3*secret/4) {
-    		setMessage("Oh! Your answer is TOO SMALL.");
+    		super.setMessage("Oh! Your answer is SO small!!.");
     	}
     	else if (number < secret) {
-    		setMessage("Your answer is too small.");
+    		super.setMessage("Your answer is too small.");
     	}
     	else if (number > secret*4/3) {
-    		setMessage("No! Your answer is TOO LARGE.");
+    		super.setMessage("No! Your answer is SO large!!.");
     	}
     	else /* if (number > secret) */ {
-    		setMessage("Your answer is too large.");
+    		super.setMessage("Your answer is too large.");
     	}
     	return false;
 	}
@@ -52,6 +58,11 @@ public class GuessingGame extends NumberGame{
 	public int getCount(){
 		return counter;
 	}
+	
+	@Override
+    public int getUpperBound(){
+        return upperBound;
+    }
 	
 	public String toString(){
 		return String.format("Guess a secret number.");
