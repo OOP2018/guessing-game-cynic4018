@@ -6,6 +6,7 @@
  * Your class should not override getMessage() and setMessage(),
  * just use the methods from this class.
  * @author Katapon Sinpunyawong
+ * @version 2018.01.12
  */
 public class NumberGame {
 	/** A helpful message for user. */

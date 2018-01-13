@@ -3,7 +3,7 @@ import java.util.Random;
  * Example guessing game.
  * 
  * @author Katapon Sinpunyawong
- * @version 2018.01.11
+ * @version 2018.01.12
  */
 public class SampleGame extends NumberGame {
     /** upper bound for secret number */

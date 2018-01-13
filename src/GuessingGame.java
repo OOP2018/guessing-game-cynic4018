@@ -2,7 +2,6 @@ import java.util.Random;
 /**
  * GuessingGame class is about game that guessing a secret number.
  * this class that extends from NumberGame.
- * 
  * @author Katapon Sinpunyawong
  * @version 2018.01.12
  */

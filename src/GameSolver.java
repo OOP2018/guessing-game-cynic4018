@@ -2,6 +2,7 @@
  * The class that automatic find secret number in NumberGame.
  * (That look like GameConsole+GuessingGame class but No player and automatic find secret number).
  * @author Katapon Sinpunyawong
+ * @version 2018.01.12
  */
 public class GameSolver {
 	

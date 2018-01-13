@@ -3,6 +3,7 @@
  * It is responsible for creating objects, 
  * connecting objects, and running the game UI.
  * @author Katapon Sinpunyawong
+ * @version 2018.01.12
  */
 public class Main {
 	public static void main(String[] args) {
