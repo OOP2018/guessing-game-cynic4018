@@ -5,42 +5,30 @@
  * @version 2018.01.12
  */
 public class GameSolver {
-	
+		/** 
+		 * GameSolver that control a play method. 
+		 * play method that do about loop and find a secret number. 
+		 * @param only secret number
+		 * @return secret number
+		 */
 		public int play(NumberGame game){
 			
-			// Describe the game (How to play).
-			System.out.println( game.toString() );
-			int guess;
+			int guess = (game.getUpperBound()+1)/2;
 			int max = game.getUpperBound();
 			int min = 1;
 			
-			while(true)
-			{
-				// Tell you hint in the first time and tell you answer too small or large(so close or not).
-				System.out.println( game.getMessage() );
-				// random secret number between 1-upperbound(100).
-				guess = (min+max)/2;
-				
-				System.out.println("Your answer? "+ guess);
-				boolean correct = game.guess(guess);
-				
-				if(correct == true) 
-				{
-					// For tell you correct.
-					System.out.println( game.getMessage() );
-					break;
-				}
-				else 
-				{
+			while(!game.guess(guess))
+			{	
 					if (game.getMessage().contains("large")) 
 					{
-						max = guess;
+						max = guess-1;
+						guess = min+(max-min)/2;
 	                }
-	                if (game.getMessage().contains("small")) 
+					else if (game.getMessage().contains("small")) 
 	                {
-						min = guess;	
+						min = guess+1;	
+						guess = min+(max-min)/2;
 	                }
-	            }
 			}
 			return guess;
 		}

@@ -5,7 +5,7 @@ import java.util.Random;
  * @author Katapon Sinpunyawong
  * @version 2018.01.12
  */
-public class GuessingGame extends NumberGame{
+public class KataponGame extends NumberGame{
 	/** upper bound for secret number */
 	private int upperBound;
 	 /** the solution to the game */
@@ -13,11 +13,14 @@ public class GuessingGame extends NumberGame{
 	/** counter to count in guess method*/
 	private int counter = 0;
 	
-	public GuessingGame(){
+	public KataponGame(){
 		this(100);
 	}
-	
-	public GuessingGame(int upperbound){
+	/**
+	 * Random a secret number.
+	 *@param tell a hint to guess secret number.
+	 */
+	public KataponGame(int upperbound){
 		// create the random number for secret.
 		Random rand = new Random();
 		this.upperBound = upperbound;
@@ -53,16 +56,29 @@ public class GuessingGame extends NumberGame{
     	return false;
 	}
 	
+	/**
+	 * getCount for count when use guess method.
+	 *@return counter.
+	 */
 	@Override
 	public int getCount(){
 		return counter;
 	}
 	
+	/**
+	 * getUpperBound for use upperBound.
+	 *@return upperBound.
+	 */
 	@Override
     public int getUpperBound(){
         return upperBound;
     }
 	
+	/**
+	 * toString for describe how to play this game.
+	 * @param How to play this game(look like rule).
+	 *@return String.format("Guess a secret number.").
+	 */
 	public String toString(){
 		return String.format("Guess a secret number.");
 	}
